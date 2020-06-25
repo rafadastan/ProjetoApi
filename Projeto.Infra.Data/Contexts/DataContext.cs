@@ -21,6 +21,7 @@ namespace Projeto.Infra.Data.Contexts
         //Regra 3: Criar um set/get(DbSet) para cada entidade
         public DbSet<Fornecedor> Fornecedor { get; set; }
         public DbSet<Produto> Produto { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
 
         //Regra 4: Sobreescrever o método OnModelCreating
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,6 +29,10 @@ namespace Projeto.Infra.Data.Contexts
             //neste método iremos incluir cada classe mapeada no projeto
             modelBuilder.ApplyConfiguration(new FornecedorMap());
             modelBuilder.ApplyConfiguration(new ProdutoMap());
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
+
+            //configurar o campo email como unique
+            modelBuilder.Entity<Usuario>(entity => { entity.HasIndex(u => u.Email).IsUnique(); });
         }
     }
 }
