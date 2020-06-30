@@ -22,5 +22,9 @@ namespace Projeto.Presentation.Api.Models
         [MaxLength(20, ErrorMessage = "Por favor, informe no máximo {1} caracteres.")]
         public string Senha { get; set; }
 
+        [Required(ErrorMessage = "Por favor, confirme a senha do usuário.")]
+        [Compare("Senha", ErrorMessage ="Senhas não confere")]
+        public string SenhaConfirmacao { get; set; }
+
     }
 }

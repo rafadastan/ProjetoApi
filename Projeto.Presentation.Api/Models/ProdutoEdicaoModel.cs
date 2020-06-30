@@ -23,7 +23,7 @@ namespace Projeto.Presentation.Api.Models
         public string Quantidade { get; set; }
 
         [Required(ErrorMessage = "Por favor, informe o fornecedor do produto.")]
-        public int IdFornecedor { get; set; }
+        public string IdFornecedor { get; set; }
 
     }
 }

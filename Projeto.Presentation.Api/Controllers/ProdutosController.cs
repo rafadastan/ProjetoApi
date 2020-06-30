@@ -12,7 +12,7 @@ using Projeto.Presentation.Api.Models;
 
 namespace Projeto.Presentation.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [EnableCors("DefaultPolicy")]
     [Route("api/[controller]")]
     [ApiController]
@@ -28,6 +28,7 @@ namespace Projeto.Presentation.Api.Controllers
                 produto.Nome = model.Nome;
                 produto.Preco = decimal.Parse(model.Preco);
                 produto.Quantidade = int.Parse(model.Quantidade);
+                produto.IdFornecedor = int.Parse(model.IdFornecedor);
 
                 produtoRepository.insert(produto);
 
@@ -49,7 +50,7 @@ namespace Projeto.Presentation.Api.Controllers
                 produto.Nome = model.Nome;
                 produto.Preco = decimal.Parse(model.Preco);
                 produto.Quantidade = int.Parse(model.Quantidade);
-                produto.IdFornecedor = model.IdFornecedor;
+                produto.IdFornecedor = int.Parse(model.IdFornecedor);
 
                 produtoRepository.Update(produto);
 

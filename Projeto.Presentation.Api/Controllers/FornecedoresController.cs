@@ -8,7 +8,7 @@ using System;
 
 namespace Projeto.Presentation.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [EnableCors("DefaultPolicy")]
     [Route("api/[controller]")]
     [ApiController]
@@ -41,6 +41,7 @@ namespace Projeto.Presentation.Api.Controllers
             try
             {
                 var fornecedor = new Fornecedor();
+                fornecedor.IdFornecedor = model.IdFornecedor;
                 fornecedor.Nome = model.Nome;
                 fornecedor.Cnpj = model.Cnpj;
 

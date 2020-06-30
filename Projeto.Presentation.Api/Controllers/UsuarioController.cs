@@ -26,7 +26,7 @@ namespace Projeto.Presentation.Api.Controllers
             try
             {
                 if (usuarioRepository.Get(model.Email) != null)
-                    return BadRequest("Erro. O email informado já encontra-se cadastrado.");
+                    return StatusCode(403, "Erro. O email informado já encontra-se cadastrado.");
 
                 var usuario = new Usuario();
                 usuario.Nome = model.Nome;
