@@ -47,6 +47,7 @@ namespace Projeto.Presentation.Api.Controllers
             try
             {
                 var produto = new Produto();
+                produto.IdProduto = model.IdProduto;
                 produto.Nome = model.Nome;
                 produto.Preco = decimal.Parse(model.Preco);
                 produto.Quantidade = int.Parse(model.Quantidade);
