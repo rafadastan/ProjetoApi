@@ -12,7 +12,7 @@ using Projeto.Presentation.Api.Models;
 
 namespace Projeto.Presentation.Api.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [EnableCors("DefaultPolicy")]
     [Route("api/[controller]")]
     [ApiController]

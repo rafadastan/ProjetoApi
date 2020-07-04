@@ -8,7 +8,7 @@ using System;
 
 namespace Projeto.Presentation.Api.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [EnableCors("DefaultPolicy")]
     [Route("api/[controller]")]
     [ApiController]

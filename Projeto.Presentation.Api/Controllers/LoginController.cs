@@ -31,7 +31,7 @@ namespace Projeto.Presentation.Api.Controllers
                 }
                 else
                 {
-                    return BadRequest("Acesso negado. Usuário não foi encontrado.");
+                    return StatusCode(403,"Acesso negado. Usuário não foi encontrado.");
                 }
             }
             catch (Exception e)
